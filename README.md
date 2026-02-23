@@ -49,57 +49,6 @@ A dedicated **behavioral safety evaluation** examines whether generated answers 
 
 ---
 
-## Submission System
-
-[View Registered Submissions](https://simulamet-medvqa.hf.space)
-
-We use the [`medvqa`](https://pypi.org/project/medvqa/) Python package to validate and submit models to the official system. The model that needs to be submitted is expected to be in a HuggingFace repository.
-
-### Installation
-```bash
-pip install -U medvqa
-```
-> The library is under active development. Always ensure you are using the latest version.
-
-Your HuggingFace repo **must include** a standalone script named:
-- `submission_task1.py` for Task 1
-- `submission_task2.py` for Task 2
-
-Use the provided template script, and make sure to:
-- Modify all `TODO` sections
-- Add required information directly in the script
-
-### Validate Before Submitting
-First make sure your submission script works in your working environment and that it loads the model correctly from your submission repo and generates outputs in the required format.
-
-```bash
-python submission_task1.py
-```
-
-#### Additional Dependencies
-If your code requires extra packages, you must include a `requirements.txt` in the root of the repo. The system will install these automatically during validation/submission.
-
-Next, you can validate the script to work independently. The `.py` script should be in the root of the same HuggingFace repo as your model. You can try this in a new venv:
-```bash
-medvqa validate --competition=gi-2026 --task=1/2 --repo_id=<your_repo_id>
-```
-- `--competition`: Set to `gi-2026`
-- `--task`: Use `1` for Task 1 or `2` for Task 2
-- `--repo_id`: Your HuggingFace model repo ID (e.g., `SushantGautam/XXModelCheckpoint`)
-
-### Submission Command
-If validation passes, you can run:
-```bash
-medvqa validate_and_submit --competition=gi-2026 --task=1/2 --repo_id=<your_repo_id>
-```
-This will create a submission and your username, along with the task and time, should be visible on [the portal](https://simulamet-medvqa.hf.space) for it to be considered officially submitted.
-
-The submission library will make your Hugging Face repository public but gated, granting the organizers access to your repo. It must remain unchanged at least until the results of the competition are announced. However, you are free to make your model fully public (non-gated).
-
-If you encounter any issues with submission, don't hesitate to contact us.
-
----
-
 ## Participant Registration
 
 Please refer to the general [ImageCLEF registration instructions](https://www.imageclef.org/2026#registration).
@@ -154,5 +103,3 @@ For any queries, feel free to reach out to our team:
 ## For More Details & Registration
 
 Visit: [imageclef.org/2026#registration](https://www.imageclef.org/2026#registration)
-
-View Registered Submissions: [simulamet-medvqa.hf.space](https://simulamet-medvqa.hf.space)
