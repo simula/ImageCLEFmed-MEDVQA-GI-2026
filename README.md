@@ -32,9 +32,6 @@ The data used for this year's challenge is based on an expanded version of the [
 
 To facilitate retrieval-augmented generation approaches, participants are also provided with a curated collection of verified endoscopy-related clinical resources that may be used during inference.
 
-Datasets will be made available on our GitHub:
-https://github.com/simula/ImageCLEFmed-MEDVQA-GI-2026
-
 ---
 
 ## Evaluation Methodology
