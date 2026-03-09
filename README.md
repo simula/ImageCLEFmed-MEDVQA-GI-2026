@@ -64,7 +64,7 @@ Please also email steven@simula.no to register your interest.
 
 - **26 January 2026:** Registration opens for all ImageCLEF tasks
 - **01 March 2026:** Development dataset released
-- **15 March 2026:** Test dataset released
+- **01 April 2026:** Test dataset released
 - **23 April 2026:** Registration closes for all ImageCLEF tasks
 - **07 May 2026:** Deadline for submitting participant runs
 - **14 May 2026:** Release of processed results by the task organizers
