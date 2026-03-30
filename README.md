@@ -30,8 +30,6 @@ A dedicated safety layer evaluates whether models exhibit undesirable behaviors 
 
 The data used for this year's challenge is based on an expanded version of the [Kvasir-VQA](https://datasets.simula.no/kvasir-vqa/) dataset, comprising more than 150,000 question-answer pairs derived from GI endoscopy images. The dataset supports both answer prediction and explainability evaluation.
 
-To facilitate retrieval-augmented generation approaches, participants are also provided with a curated collection of verified endoscopy-related clinical resources that may be used during inference.
-
 Development Dataset: https://datasets.simula.no/kvasir-vqa-x1
 
 Testing Dataset: TBA
