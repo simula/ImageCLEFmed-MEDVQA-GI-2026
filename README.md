@@ -32,7 +32,7 @@ The data used for this year's challenge is based on an expanded version of the [
 
 Development Dataset: https://datasets.simula.no/kvasir-vqa-x1
 
-Testing Dataset: TBA
+Submission System: https://simulamet-medvqa-gi-2026.hf.space
 
 ---
 
