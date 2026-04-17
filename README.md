@@ -1,6 +1,6 @@
 # ImageCLEFmed-MEDVQA-GI-2026
 
-[**Registration**](https://www.imageclef.org/2026#registration)
+[**Registration**](https://www.imageclef.org/2026#registration) | [View Registered Submissions](https://simulamet-medvqa-gi-2026.hf.space)
 
 The [**ImageCLEFmed-MEDVQA-GI**](https://www.imageclef.org/2026/medical/vqa) challenge (4th edition for ImageCLEFmedical) focuses on advancing **Visual Question Answering (VQA)** for **gastrointestinal (GI) endoscopy** with a strong emphasis on **clinical relevance**, **explainability**, and **safety**.
 
