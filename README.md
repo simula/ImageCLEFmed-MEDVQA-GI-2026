@@ -59,8 +59,8 @@ pip install -U medvqa
 > The library is under **active development**. Always ensure you're using the **latest version**.
 
 Your HuggingFace repo **must include** a standalone script named:
-- [`submission_task1.py`](https://raw.githubusercontent.com/SushantGautam/MedVQA/refs/heads/main/medvqa/submission_samples/gi-2025/submission_task1.py) for Task 1  
-- [`submission_task2.py`](https://raw.githubusercontent.com/SushantGautam/MedVQA/refs/heads/main/medvqa/submission_samples/gi-2025/submission_task2.py) for Task 2  
+- [`submission_task1.py`](https://raw.githubusercontent.com/SushantGautam/MedVQA/refs/heads/main/medvqa/submission_samples/gi-2026/submission_task1.py) for Task 1  
+- [`submission_task2.py`](https://raw.githubusercontent.com/SushantGautam/MedVQA/refs/heads/main/medvqa/submission_samples/gi-2026/submission_task2.py) for Task 2  
 
 Use the provided **template script**, and make sure to:
 - Modify all `TODO` sections  
@@ -79,16 +79,16 @@ Else you will get package missing errors.
 
 Next, you can validate the script to work independently. The .py script should now be in the root of the same HuggingFace repo as your model. You can try this in a new venv:
 ```bash
-medvqa validate --competition=gi-2025 --task=1/2 --repo_id=<your_repo_id>
+medvqa validate --competition=gi-2026 --task=1/2 --repo_id=<your_repo_id>
 ```
-- `--competition`: Set to `gi-2025`
+- `--competition`: Set to `gi-2026`
 - `--task`: Use `1` for Task 1 or `2` for Task 2  
 - `--repo_id`: Your **HuggingFace model repo ID** (e.g., `SushantGautam/XXModelCheckpoint`)
 
 ### Submission Command  
 If validation is okey, you can just run:
 ```bash
-medvqa validate_and_submit --competition=gi-2025 --task=1/2 --repo_id=<your_repo_id>
+medvqa validate_and_submit --competition=gi-2026 --task=1/2 --repo_id=<your_repo_id>
 ```
 This will make a submisision and your username, along with the task and time, should be visible on [the portal](https://simulamet-medvqa.hf.space) for it to be considered officially submitted.
 The submission library will make your Hugging Face repository public but gated, granting the organizers access to your repo.
