@@ -100,52 +100,64 @@ It must remain unchanged at least until the results of the competition are annou
 
 For **Task 2**, participants must submit their results directly to the organizers via email. Submissions are evaluated by the organizers and final results are presented at the workshop.
 
-Each submission must be a **ZIP archive** with the following layout:
+The submission schema is aligned with the parallel [MediaEval Medico 2026](https://github.com/simula/MediaEval-Medico-2026) Task 2 challenge so participants overlapping between the two can reuse their pipeline.
+
+#### ZIP Layout
 
 ```
 <TeamName>_task2.zip
-├── predictions_2.json        # required
-└── visual_explanations/      # optional
-    ├── 0.png
-    ├── 1.png
-    └── ...
+├── submission_task2.jsonl     # required, one JSON object per val_id
+├── submission_task2.py        # required, team details (template below)
+├── visuals/                   # optional, referenced from visual_explanation entries
+│   ├── 1234_heatmap.png
+│   └── 5678_bbox.json
+└── README.md                  # method description and reproduction notes
 ```
 
-#### `predictions_2.json`
+#### `submission_task2.jsonl`
 
-A `submission_info` block with team metadata, followed by a `predictions` array with one entry per test-set row. Each prediction extends the Task 1 fields (`index`, `img_id`, `question`, `answer`) with a required `explanation` and an optional `visual_explanation`:
+JSON Lines — **one object per line**, one line per `val_id`:
 
 ```json
 {
-  "submission_info": {
-    "Participant_Names": "Jane Doe, John Smith",
-    "Affiliations": "Example University",
-    "Contact_emails": ["jane@example.edu"],
-    "Team_Name": "ExampleTeam",
-    "Country": "...",
-    "Notes_to_organizers": "Method summary, model details, training data, dependencies."
-  },
-  "predictions": [
-    {
-      "index": 0,
-      "img_id": "<image id from the test set>",
-      "question": "<question text from the test set>",
-      "answer": "<your model's answer>",
-      "explanation": "<your model's textual explanation>",
-      "visual_explanation": {
-        "type": "image",
-        "path": "visual_explanations/0.png"
-      }
-    }
-  ]
+  "val_id": 0,
+  "img_id": "UNIQUE_IMAGE_IDENTIFIER",
+  "question": "Original question posed to the model.",
+  "answer": "Prediction from your model from Task 1.",
+  "textual_explanation": "Detailed narrative in clinical language justifying the answer.",
+  "visual_explanation": [{
+    "type": "heatmap | segmentation_mask | bounding_box | etc.",
+    "data": "visuals/1234_heatmap.png",
+    "description": "(Optional) Highlights the region of interest that supports the answer."
+  }],
+  "confidence_score": 0.92
 }
 ```
 
-Rules:
-- Iterate the test set in order; `index` matches the row index, exactly like Task 1.
-- Every test-set row must appear exactly once.
-- `answer` and `explanation` are required strings.
-- `visual_explanation` is optional.
+Field requirements:
+
+- **`val_id`** — index into the released Task 2 validation subset.
+- **`img_id`** / **`question`** / **`answer`** — must match the released test data exactly (same as Task 1).
+- **`textual_explanation`** *(required)* — clinician-oriented reasoning referencing visual cues (location, morphology, color, size, vascular pattern, etc.).
+- **`visual_explanation`** *(optional but encouraged)* — a **list** of grounding artifacts. `type` may be `heatmap`, `segmentation_mask`, `bounding_box`, or any descriptive label. `data` is either a relative path inside the ZIP (`visuals/...`) or inline coordinates (e.g. `[[x1, y1, x2, y2]]`).
+- **`confidence_score`** *(optional but encouraged)* — float in `[0, 1]` from your model's confidence or uncertainty estimation. Used by the safety/calibration evaluation.
+
+Keep `data` paths **relative to the ZIP root**. Every `val_id` in the released subset must appear exactly once.
+
+#### `submission_task2.py`
+
+A small Python file holding team metadata (matches the MediaEval/Task 1 convention):
+
+```python
+SUBMISSION_INFO = {
+    "Participant_Names": "Jane Doe, John Smith",
+    "Affiliations": "Example University",
+    "Contact_emails": ["jane@example.edu"],   # first email used for correspondence
+    "Team_Name": "ExampleTeam",
+    "Country": "...",
+    "Notes_to_organizers": "Method summary, model details, training data, dependencies.",
+}
+```
 
 Submissions should be emailed to:
 
