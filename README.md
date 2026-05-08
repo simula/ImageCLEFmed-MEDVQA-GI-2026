@@ -100,8 +100,6 @@ It must remain unchanged at least until the results of the competition are annou
 
 For **Task 2**, participants must submit their results directly to the organizers via email. Submissions are evaluated by the organizers and final results are presented at the workshop.
 
-The submission schema is aligned with the parallel [MediaEval Medico 2026](https://github.com/simula/MediaEval-Medico-2026) Task 2 challenge so participants overlapping between the two can reuse their pipeline.
-
 #### ZIP Layout
 
 ```
@@ -146,7 +144,7 @@ Keep `data` paths **relative to the ZIP root**. Every `val_id` in the released s
 
 #### `submission_task2.py`
 
-A small Python file holding team metadata (matches the MediaEval/Task 1 convention):
+A small Python file holding team metadata (matches the Task 1 convention):
 
 ```python
 SUBMISSION_INFO = {
