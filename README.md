@@ -177,8 +177,8 @@ Please also email [steven@simula.no](mailto:steven@simula.no) to register your i
 - **01 March 2026:** Development dataset released
 - **17 April 2026:** Test dataset released
 - **23 April 2026:** Registration closes for all ImageCLEF tasks
-- **14 May 2026:** Deadline for submitting participant runs
-- **21 May 2026:** Release of processed results by the task organizers
+- **22 May 2026:** Deadline for submitting participant runs
+- **25 May 2026:** Release of processed results by the task organizers
 - **28 May 2026:** Submission of participant papers [CEUR-WS]
 - **30 June 2026:** Notification of acceptance
 - **21 September 2026:** CLEF 2026, Jena, Germany
